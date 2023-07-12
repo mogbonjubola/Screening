@@ -10,12 +10,12 @@ pipeline{
         }
         stage('Install Dependencies'){
             steps {
-                bat 'yarn install'
+                 'yarn install'
             }
         }
         stage('Typescript Compilation'){
             steps{
-                 yarn run prettier-check
+                  yarn run prettier-check
             }     
         }
         stage('formatting'){
@@ -25,7 +25,7 @@ pipeline{
 
         }   
         stage('testing'){
-            step{
+            steps{
                 yarn run test
             } 
         } 
