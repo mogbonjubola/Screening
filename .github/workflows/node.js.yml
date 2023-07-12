@@ -1,0 +1,25 @@
+name: Screening build workflow
+
+on:
+  push:
+    branches: [ "Mogbonjubola" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [16.x]
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v3
+      with:
+        node-version: ${{ matrix.node-version }}
+    - run: yarn install && yarn set version 1.22.18
+    - run: yarn rimraf dist && yarn tsc --project tsconfig.build.json && cp -r ./src/public ./dist/public
+    - run: yarn prettier --write src/**/*.ts
+    - run: yarn prettier --check src/**/*.ts
+    - run: yarn jest
+    - run: docker build -t screening:${{github.run_number}} .
