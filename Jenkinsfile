@@ -29,4 +29,5 @@ pipeline{
                 yarn run test
             } 
         } 
-    },    
+    }
+}    
