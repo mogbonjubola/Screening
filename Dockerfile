@@ -8,4 +8,4 @@ COPY yarn.lock ./
 RUN yarn install
 COPY . .
 
-CMD ["yarn", "run serve"]
+CMD ["node", "dist/index.js"]
