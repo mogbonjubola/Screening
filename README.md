@@ -6,7 +6,7 @@ Welcome to the technical task for the Engineering Effectiveness team at White La
 
 Within this repository is a simple Node.js server, written using TypeScript. If you've never encountered Node or TypeScript before, don't panic! The task doesn't require you to write any actual code, instead focusing on DevOps-style tasks that interact with the code in a limited way.
 
-Use of Google, StackOverflow etc is also allowed and encouraged!
+Use of Google, StackOverflow etc is also alowed and encouraged!
 
 To help you get started, here's a quick summary of the files this repository contains:
 
