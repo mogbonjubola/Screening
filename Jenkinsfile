@@ -29,4 +29,4 @@ pipeline{
                 yarn run test
             } 
         } 
-    }    
+    },    
